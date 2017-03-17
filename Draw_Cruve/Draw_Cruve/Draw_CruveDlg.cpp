@@ -176,10 +176,10 @@ void CDraw_CruveDlg::OnBnClickedDraw()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	m_ChartCtrl1.EnableRefresh(false); 
-	int num = 1000;
+	int num = 10000;
 	double *x, *y;
 	x = new double[num],y = new double[num];
-	for (int i=0; i<1000; i++)  
+	for (int i=0; i<num; i++)  
 	{  
 		x[i] = i;  
 		y[i] = (float(i));  
@@ -188,7 +188,7 @@ void CDraw_CruveDlg::OnBnClickedDraw()
 	m_ChartCtrl1.RemoveAllSeries();//先清空  
 	pLineSerie1 = m_ChartCtrl1.CreateLineSerie();  
 	pLineSerie1->SetSeriesOrdering(poNoOrdering);//设置为无序  
-	pLineSerie1->AddPoints(x, y,1000);  
+	pLineSerie1->AddPoints(x, y,num);  
 	//pLineSerie1->SetName(_T("这是IDC_ChartCtrl1的第一条线"));//SetName的作用将在后面讲到 
 
 	m_ChartCtrl1.EnableRefresh(true);  
